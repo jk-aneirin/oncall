@@ -29,4 +29,5 @@ COPY ops/entrypoint.py /home/oncall/entrypoint.py
 
 EXPOSE 8080
 
-CMD ["sudo", "-EHu", "oncall", "bash", "-c", "source /home/oncall/env/bin/activate && python /home/oncall/entrypoint.py"]
+USER oncall
+CMD ["bash", "-c", "source /home/oncall/env/bin/activate && python /home/oncall/entrypoint.py"]
